@@ -1,5 +1,5 @@
 Name: Nwankwo ThankGod
 Matric number: 23CG034100
 Program: Computer Science
-Live URL: https://your-deployed-app.onrender.com
-GitHub repo: https://github.com/yourusername/LLM_QA_Project_YourName_MatricNo
+Live URL: https://llm-qa-project-nwankwo-thankgod.onrender.com
+GitHub repo: https://github.com/TG-777/LLM_QA_Project_Nwankwo-ThankGod_23CG034100

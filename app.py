@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request, jsonify
 import requests
 import re
+import os
 
 app = Flask(__name__)
 
 
-LLM_API_URL = "/"
+LLM_API_URL = ""
 API_KEY = "TG"  
 
 def preprocess_question(question):
@@ -71,5 +72,10 @@ def index():
     return render_template("index.html", answer=answer, processed_question=processed_question)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Render and other PaaS typically provide PORT in the environment.
+    port = int(os.environ.get("PORT", 5000))
+    host = os.environ.get("HOST", "0.0.0.0")
+    debug_env = os.environ.get("DEBUG", "false").lower()
+    debug = debug_env in ("1", "true", "yes")
+    app.run(host=host, port=port, debug=debug)
 
