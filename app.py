@@ -6,8 +6,8 @@ import os
 app = Flask(__name__)
 
 
-LLM_API_URL = ""
-API_KEY = "TG"  
+LLM_API_URL = "gemini.google.com"
+API_KEY = "AIzaSyDzTvkehh9PKCLAUC-Ut62_dXFE_MF-KgU"  
 
 def preprocess_question(question):
     """Lowercase, remove punctuation"""

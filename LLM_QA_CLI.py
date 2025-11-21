@@ -2,8 +2,8 @@ import requests
 import re
 
 # Replace with your chosen LLM API endpoint and key
-LLM_API_URL = "https://api.openai.com/v1/completions"  
-API_KEY = ""
+LLM_API_URL = "gemini.google.com"  
+API_KEY = "AIzaSyDzTvkehh9PKCLAUC-Ut62_dXFE_MF-KgU"
 
 def preprocess_question(question):
     # Lowercase, remove punctuation, simple tokenization
