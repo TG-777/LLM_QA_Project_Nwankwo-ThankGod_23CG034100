@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 
 LLM_API_URL = "gemini.google.com"
-API_KEY = "AIzaSyDzTvkehh9PKCLAUC-Ut62_dXFE_MF-KgU"  
+API_KEY = os.environ.get("GOOGLE_KEY")  
 
 def preprocess_question(question):
     """Lowercase, remove punctuation"""
