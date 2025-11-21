@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Q&A System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+     <div class="container">
+        <h2>AI Question and Answering System</h2>
+        <p>Enter question below and get feedback from AI:</p>
+
+        <input type="text" id="question" placeholder="Type your question here">
+        <button onclick="askAI()">Ask AI</button>
+
+        <div id="answer">The answer will appear here...</div>
+
+        <div class="footer">
+            Name: <strong>Nwankwo ThankGod</strong> | Matric No: <strong>23CG034100</strong><br>
+            Project: <strong>AI Question and Answering System</strong>
+        </div>
+    </div>
+     <script>
+        async function askAI() {
+            const question = document.getElementById('question').value;
+            const answerDiv = document.getElementById('answer');
+            answerDiv.innerHTML = "Thinking...";
+
+            try {
+                // Call your backend AI endpoint (not ChatGPT)
+                // Example using a mock API endpoint
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question: question })
+                });
+
+                const data = await response.json();
+                answerDiv.innerHTML = data.answer || "No answer received from AI.";
+
+            } catch (err) {
+                answerDiv.innerHTML = "Error fetching answer: " + err.message;
+            }
+        }
+    </script>
+</body>
+</html>
